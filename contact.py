@@ -1,3 +1,5 @@
+import pyperclip
+
 class Contact:
 
     contact_list = []
@@ -31,3 +33,8 @@ class Contact:
     @classmethod
     def display_contacts(cls):
         return cls.contact_list
+
+    @classmethod
+    def copy_email(cls, number):
+        contact_found = Contact.find_by_number(number)
+        pyperclip.copy(contact_found.email)

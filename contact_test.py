@@ -53,8 +53,11 @@ class TestContact(unittest.TestCase):
     def test_display_all_contacts(self):
         self.assertEqual(Contact.dispaly_contacts(), Contact.contact_list)
 
+    def test_copy_email(self):
+        self.new_contact.save_contact()
+        Contact.copy_email("0787654321")
+        self.assertEqual(self.new_contact.email, pyperclip.paste())
+
 
 if __name__ == '__main__':
     unittest.main()
-
-
