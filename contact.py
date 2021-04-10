@@ -1,5 +1,6 @@
 import pyperclip
 
+
 class Contact:
 
     contact_list = []
@@ -23,12 +24,12 @@ class Contact:
                 return contact
 
     @classmethod
-    def contact_exists(cls, number):
+    def contact_exist(cls, number):
         for contact in cls.contact_list:
             if contact.phone_number == number:
                 return True
 
-            return False
+        return False
 
     @classmethod
     def display_contacts(cls):
